@@ -23,32 +23,47 @@
 
 <script>
     export default {
-        name: "LayoutHeaderNav",
-        methods:{
-          menuSelect(index){
-            this.$router.push(index)
-          }
-        },
-        mounted() {
-          //页面渲染完成后
-          //渲染tab
-          var openTab = this.$store.state.openTab;
-          if(openTab.length){
-            this.$store.commit('set_active_tab', this.$route.path)
-          }else{
-            if(this.$route.path !='/FuncForm' ){
-              this.$store.commit('add_tab',{route:'/FuncForm', name:'表单'})
-              this.$store.commit('add_keepAliveRouter', 'FuncForm')
-              this.$store.commit('add_tab',{route:this.$route.path,name:this.$route.name})
-              this.$store.commit('add_keepAliveRouter', this.$route.path.split('/')[1])
-              this.$store.commit('set_active_tab', this.$route.path)
-            }else{
-              this.$store.commit('add_tab',{route:this.$route.path,name:this.$route.name})
-              this.$store.commit('add_keepAliveRouter', this.$route.path.split('/')[1])
+      name: "LayoutHeaderNav",
+      methods:{
+        menuSelect(index){
+          this.$router.push(index)
+        }
+      },
+      mounted() {
+        //页面渲染完成后
+        //渲染tab
+        var openTab = this.$store.state.openTab;
+        if(openTab.length){
+          this.$store.commit('set_active_tab', this.$route.path)
+        }else{
+          this.$store.commit('add_tab',{route:this.$route.path,name:this.$route.name})
+          this.$store.commit('add_keepAliveRouter', this.$route.path.split('/')[1])
+          this.$store.commit('set_active_tab', this.$route.path)
+        }
+      },
+      watch:{
+        /**
+         * 监听路由变化
+         * 若已在openTab中，则只设置active；若不在openTab中，则加到openTab中，并设置active和keepActiveTab
+         * @param to 要切换到路由
+         */
+        '$route' (to){
+          let flag = false;
+          for (let item of this.$store.state.openTab){
+            if(item.name === to.name){
+              this.$store.commit('set_active_tab',to.path)
+              flag = true;
+              break;
             }
           }
-
+          if(!flag){
+            console.log(to)
+            this.$store.commit('add_tab',{route: to.path, name: to.name})
+            this.$store.commit('set_active_tab',to.path)
+            this.$store.commit('add_keepAliveRouter',to.path.split('/')[1])//去除前面的'/'
+          }
         }
+      }
     }
 </script>
 

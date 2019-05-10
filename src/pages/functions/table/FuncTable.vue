@@ -8,14 +8,14 @@
       :default-sort = "{prop: 'date', order: 'descending'}">
       <el-table-column
         type="selection"
+        prop="id"
         width="55">
       </el-table-column>
       <el-table-column
         fixed
         prop="date"
         label="日期"
-        width="150"
-        sortable>
+        width="150">
       </el-table-column>
       <el-table-column
         prop="name"
@@ -67,6 +67,7 @@
           return{
             tableData: [
               {
+                id: 1,
                 date: '2016-05-03',
                 name: '王小虎',
                 province: '上海',
@@ -74,6 +75,7 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 2,
                 date: '2016-05-02',
                 name: '张小虎',
                 province: '上海',
@@ -81,6 +83,7 @@
                 address: '上海市普陀区金沙江路 1518 弄上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 3,
                 date: '2016-05-04',
                 name: '安小虎',
                 province: '上海',
@@ -88,6 +91,7 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 4,
                 date: '2016-05-01',
                 name: '林小虎',
                 province: '上海',
@@ -95,6 +99,7 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 5,
                 date: '2016-05-08',
                 name: '邱小虎',
                 province: '上海',
@@ -103,6 +108,7 @@
                 zip: 200333
               }
               , {
+                id: 6,
                 date: '2016-05-06',
                 name: '秦小虎',
                 province: '上海',
@@ -110,6 +116,7 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 7,
                 date: '2016-05-07',
                 name: '马小虎',
                 province: '上海',
@@ -117,6 +124,7 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 8,
                 date: '2016-05-03',
                 name: '周小虎',
                 province: '上海',
@@ -124,6 +132,7 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 9,
                 date: '2016-05-02',
                 name: '林大虎',
                 province: '上海',
@@ -131,86 +140,33 @@
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              },
-              {
-                date: '2016-05-01',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
-                date: '2016-05-07',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
+                id: 8,
                 date: '2016-05-03',
-                name: '王小虎',
+                name: '周小虎',
                 province: '上海',
                 city: '普陀区',
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
+                id: 9,
                 date: '2016-05-02',
-                name: '王小虎',
+                name: '林大虎',
                 province: '上海',
                 city: '普陀区',
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
-                date: '2016-05-04',
-                name: '王小虎',
+                id: 8,
+                date: '2016-05-03',
+                name: '周小虎',
                 province: '上海',
                 city: '普陀区',
                 address: '上海市普陀区金沙江路 1518 弄',
                 zip: 200333
               }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
-                date: '2016-05-08',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
-                date: '2016-05-06',
-                name: '王小虎',
-                province: '上海',
-                city: '普陀区',
-                address: '上海市普陀区金沙江路 1518 弄',
-                zip: 200333
-              }, {
-                date: '2016-05-07',
-                name: '王小虎',
+                id: 9,
+                date: '2016-05-02',
+                name: '林大虎',
                 province: '上海',
                 city: '普陀区',
                 address: '上海市普陀区金沙江路 1518 弄',
@@ -221,14 +177,14 @@
         },
         methods:{
           deleteRow(index, rows){
-            console.log(index)
             rows.splice(index, 1);
+            //若table进行排序，则index对应排序后的行比如1，而tableData数组的顺序不变，删除时，是按排序后的index去tableData中找对应index,会导致删错数据
           }
         },
         mounted() {
-          var tableBox = document.getElementById('table-box');
-          var height = window.innerHeight - tableBox.getBoundingClientRect().top -10;
-          tableBox.style.height = height + 'px';
+          // var tableBox = document.getElementById('table-box');
+          // var height = window.innerHeight - tableBox.getBoundingClientRect().top + 17 - 40 - 30;
+          // tableBox.style.height = height + 'px';
         }
     }
 </script>

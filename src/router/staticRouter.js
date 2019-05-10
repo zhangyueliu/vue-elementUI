@@ -20,7 +20,7 @@ const staticRouter = [
     component: Layout,
     children: [{
       path: '/FuncTabs',
-      name: '主要内容页',
+      name: 'tab标签页',
       component: FuncTabs,
       children: [{
         path:'/FuncForm',

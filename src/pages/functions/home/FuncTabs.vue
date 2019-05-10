@@ -32,7 +32,8 @@
           },
           deleteTab(name){
             //第一个tab不删除
-            if(name === '/FuncForm'){
+            if(this.openTab.length === 1){
+              this.$message("仅剩的一个tab不能关闭！")
               return;
             }
             this.$store.commit('delete_tab', name);
@@ -44,8 +45,6 @@
               if(this.openTab &&this.openTab.length>=1){
                 let nextname = this.openTab[this.openTab.length-1].route;
                 this.$router.push(nextname);
-              }else{
-                this.$router.push('/FuncForm');
               }
             }
           }
@@ -62,40 +61,10 @@
               this.$store.commit('set_active_tab',val)
             }
           }
-        },
-        watch:{
-          /**
-           * 监听路由变化
-           * 若已在openTab中，则只设置active；若不在openTab中，则加到openTab中，并设置active和keepActiveTab
-           * @param to 要切换到路由
-           */
-          '$route' (to){
-            let flag = false;
-            for (let item of this.openTab){
-              if(item.name === to.name){
-                this.$store.commit('set_active_tab',to.path)
-                flag = true;
-                break;
-              }
-            }
-            if(!flag){
-              this.$store.commit('add_tab',{route: to.path, name: to.name})
-              this.$store.commit('set_active_tab',to.path)
-              this.$store.commit('add_keepAliveRouter',to.path.split('/')[1])//去除前面的'/'
-            }
-          }
         }
     }
 </script>
 
 <style scoped>
-  .tab-box{
-    height: 100%;
-  }
-  .el-tabs__content{
-    height: calc(100% - 39px);
-  }
-  .el-tab-pane{
-    height: 100%;
-  }
+
 </style>
