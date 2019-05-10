@@ -1,0 +1,39 @@
+/*--------layout布局的样式-----*/
+/*---------header--------*/
+.header-main{
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 1500;
+  height: 50px;
+  background-color: #f8f8f8;
+}
+/*---------headerNav--------*/
+.header-nav{
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 50px;
+  z-index: 1500;
+  height: 60px;
+  background-color: #cccccc;
+}
+/*---------左侧侧边栏--------*/
+.sidebar{
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  top: 110px;
+  z-index: 1500;
+  width: 20rem;
+  border-right: 1px solid #ccc;
+}
+/*---------右侧main内容区域--------*/
+.main-wrapper{
+  height: calc(100% - 110px);
+  margin-top: 110px;
+}
+.main{
+  padding-left: 20rem;
+}

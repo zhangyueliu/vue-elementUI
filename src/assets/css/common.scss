@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* [vue-scroll] show when hover */
+.__vuescroll:hover {
+  > .__rail-is-vertical {
+    .__bar-is-vertical {
+      opacity: 1 !important;
+    }
+  }
+  > .__rail-is-horizontal {
+    .__bar-is-horizontal {
+      opacity: 1 !important;
+    }
+  }
+}
+
+/*---------------首页公共样式--------------------------------*/
+body,html{
+  height:100%;
+  width: 100%;
+}
+li{
+  list-style: none;
+}
+.h-all{
+  height: 100%;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+
+/*---------header图标--------*/
+.header-image{
+  float: left;
+  margin-left: 15px;
+}
+/*---------header右侧--------*/
+.header-right{
+  float: right;
+  height: 100%;
+  line-height: 50px;
+  font-size: 14px;
+  .header-right-item{
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    .header-right-item-box{
+      padding: 0px 10px;
+      .switch-language span{
+        display: inline-block;
+      }
+    }
+    .switch-language{
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+}
+
+
+
+.main-box{
+
+}
+
+
+/*-----修改elementUI自带样式----*/
+.el-dropdown{
+  color: #2c3e50;
+}
+.el-dropdown-menu__item{
+  color: #2c3e50;
+}
+.el-menu.el-menu--horizontal{
+  border: 0px;
+}
+.el-tabs__new-tab{
+  margin-right: 10px;
+}
+.el-tree-node__label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
