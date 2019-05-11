@@ -62,6 +62,8 @@
             this.$store.commit('set_active_tab',to.path)
             this.$store.commit('add_keepAliveRouter',to.path.split('/')[1])//去除前面的'/'
           }
+          //切换tab,滚动条回到顶部
+          document.getElementsByClassName('tab-box')[0].children[1].scrollTop=0;
         }
       }
     }

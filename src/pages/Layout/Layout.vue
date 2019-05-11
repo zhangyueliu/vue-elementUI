@@ -14,9 +14,9 @@
         </vue-scroll>
       </div>
       <div class="h-all main">
-        <vue-scroll :ops="opsMain">
+        <!--<vue-scroll :ops="opsMain">-->
           <the-main></the-main>
-        </vue-scroll>
+        <!--</vue-scroll>-->
       </div>
     </el-row>
   </el-row>

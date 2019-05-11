@@ -8,10 +8,11 @@
       v-for="item in openTab"
       :name="item.route"
     >
+      <keep-alive :include="keepAliveRouter.toString()">
+        <router-view></router-view>
+      </keep-alive>
     </el-tab-pane>
-    <keep-alive :include="keepAliveRouter.toString()">
-      <router-view></router-view>
-    </keep-alive>
+
   </el-tabs>
 </template>
 
@@ -29,6 +30,10 @@
         methods:{
           tabClick(tab){
             this.$router.push(tab.name)
+            if(tab.name !== this.activeIndex){
+              //切换tab,滚动条回到顶部
+              document.getElementsByClassName('tab-box')[0].children[1].scrollTop=0;
+            }
           },
           deleteTab(name){
             //第一个tab不删除
@@ -38,7 +43,6 @@
             }
             this.$store.commit('delete_tab', name);
             this.$store.commit('delete_keepAliveRouter', name.split('/')[1]);
-            console.log(this.keepAliveRouter.toString())
             this.keepAliveRouter = this.$store.state.keepAliveRouter;
             //设置当前显示的tab
             if(name === this.activeIndex){
@@ -66,5 +70,13 @@
 </script>
 
 <style scoped>
-
+  .tab-box{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .tab-box >>> .el-tabs__content{
+    flex:1;
+    overflow-y: auto;
+  }
 </style>
