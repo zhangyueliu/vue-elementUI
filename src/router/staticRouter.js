@@ -1,7 +1,6 @@
 import Layout from '@/pages/Layout/Layout'
 import LayoutSecond from '@/pages/Layout/LayoutSecond'
 import HelloWorld from "../components/HelloWorld"
-import InfomationPage from "../components/InfomationPage"
 import LayoutThird from "@/pages/Layout/LayoutThird"
 import LayoutMain from "@/pages/Layout/LayoutMain"
 import FuncForm from "@/pages/functions/form/FuncForm"

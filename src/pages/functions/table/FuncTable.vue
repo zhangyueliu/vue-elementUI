@@ -3,9 +3,7 @@
   <el-row id="table-box">
     <el-table
       :data="tableData"
-      style="width: 100%; border: 1px solid #cccccc"
-      height="100%"
-      :default-sort = "{prop: 'date', order: 'descending'}">
+      style="width: 100%; border: 1px solid #cccccc">
       <el-table-column
         type="selection"
         prop="id"
