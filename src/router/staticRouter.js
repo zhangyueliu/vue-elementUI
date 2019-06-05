@@ -12,25 +12,25 @@ import FuncTable from "@/pages/functions/table/FuncTable"
 const staticRouter = [
   {
     path: '/',
-    redirect: '/FuncForm'
+    redirect: '/Layout/FuncTabs/FuncForm'
   }, {
     path: '/Layout',
     name: '第一种最外层布局',
     component: Layout,
     children: [{
-      path: '/FuncTabs',
+      path: 'FuncTabs',
       name: 'tab标签页',
       component: FuncTabs,
       children: [{
-        path:'/FuncForm',
+        path:'FuncForm',
         name:'表单',
         component: FuncForm
       }, {
-        path:'/FuncCard',
+        path:'FuncCard',
         name:'卡片',
         component: FuncCard
       }, {
-        path:'/FuncTable',
+        path:'FuncTable',
         name:'表格',
         component: FuncTable
       }]

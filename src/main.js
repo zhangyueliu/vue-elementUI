@@ -10,6 +10,7 @@ import 'font-awesome/scss/font-awesome.scss'
 import VueScroll from 'vuescroll'
 import 'vuescroll/dist/vuescroll.css'
 import './assets/css/common.scss'
+import "babel-polyfill"
 // import './assets/css/commonSecond.scss'
 
 Vue.use(ElementUI)
