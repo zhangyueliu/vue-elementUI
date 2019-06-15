@@ -9,12 +9,13 @@
       mode="horizontal"
       @select="menuSelect">
       <template v-for="(item1,index1) in $router.options.routes[1].children">
-        <el-submenu :index="index1">
+        <el-submenu :index="index1" v-if="item1.children">
           <template slot="title">{{item1.name}}</template>
           <template v-for="(item2, index2) in item1.children">
             <el-menu-item :index="item2.path">{{item2.name}}</el-menu-item>
           </template>
         </el-submenu>
+        <el-menu-item :index="item1.path" v-else>{{item1.name}}</el-menu-item>
       </template>
 
     </el-menu>

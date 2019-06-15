@@ -7,34 +7,40 @@ import FuncForm from "@/pages/functions/form/FuncForm"
 import FuncTabs from "@/pages/functions/home/FuncTabs"
 import FuncCard from "@/pages/functions/card/FuncCard"
 import FuncTable from "@/pages/functions/table/FuncTable"
+import FlexBoxTest from "@/pages/functions/pagesDemo/FlexBoxTest"
 
 /* 静态页面路由 */
 const staticRouter = [
   {
     path: '/',
-    redirect: '/Layout/FuncTabs/FuncForm'
-  }, {
+    redirect: '/FuncForm'
+  },
+  {
     path: '/Layout',
     name: '第一种最外层布局',
     component: Layout,
     children: [{
-      path: 'FuncTabs',
+      path: '/FuncTabs',
       name: 'tab标签页',
       component: FuncTabs,
       children: [{
-        path:'FuncForm',
+        path:'/FuncForm',
         name:'表单',
         component: FuncForm
       }, {
-        path:'FuncCard',
+        path:'/FuncCard',
         name:'卡片',
         component: FuncCard
       }, {
-        path:'FuncTable',
+        path:'/FuncTable',
         name:'表格',
         component: FuncTable
       }]
     }]
+  }, {
+    path: '/FlexBoxTest',
+    name: 'Flex布局',
+    component: FlexBoxTest,
   }
   // , {
   //   path: '/layoutSecond',
